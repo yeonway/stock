@@ -1,0 +1,18 @@
+<h2>저장된 관심종목 및 AI 분석 결과</h2>
+<table border="1">
+    <tr>
+        <th>종목명</th>
+        <th>코드</th>
+        <th>최근가격</th>
+        <th>AI 예측(내일 예상가격)</th>
+    </tr>
+    {% for result in ai_results %}
+    <tr>
+        <td>{{ result.name }}</td>
+        <td>{{ result.code }}</td>
+        <td>{{ result.latest_price }}</td>
+        <td>{{ result.ai_pred }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('select_stocks') }}">다시 선택하기</a>

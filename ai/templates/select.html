@@ -1,0 +1,8 @@
+<h2>관심종목을 선택하세요</h2>
+<form method="post">
+    {% for stock in stocks %}
+        <input type="checkbox" name="stocks" value="{{stock.code}}">{{stock.name}}<br>
+    {% endfor %}
+    <input type="submit" value="저장">
+</form>
+<a href="{{ url_for('show_selected') }}">저장된 관심종목/AI 분석 결과 보기</a>
